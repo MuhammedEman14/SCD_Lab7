@@ -17,7 +17,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [14.x]
 
     steps:
     - uses: actions/checkout@v2
@@ -29,6 +29,9 @@ jobs:
 
     - name: Install Dependencies
       run: npm install
+
+    - name: Debug Test Command
+      run: echo "Running tests now..."
 
     - name: Run Tests
       run: npm test --if-present
